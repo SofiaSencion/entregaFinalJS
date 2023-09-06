@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/> <!--libreria swiper-->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="modoClaro">
+    <nav>
+        <a class="active" href="./index.html">Home</a>
+        <a href="./productos.html">Productos</a>
+        <a href="./carrito.html">Carrito</a>        
+        <a href="./contacto.html">Contacto</a>
+        <button id="dark-mode-toggle" class="dark-mode-toggle">Modo oscuro</button>
+    </nav>
+    
+    <h1>HOME</h1>
+
+    <!--swiper-->
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/273575-black-friday-2017-zara-ofertas-rebajas-ropa.webp" alt="imagen de ropa en oferta"></a></div>
+          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/2e8b6d3f-0f10-42c7-8a38-b0af7e3e3ec2.png" alt="imagen de ropa en oferta"></a></div>
+          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/Los-colores-que-utilizamos-en-la-ropa-dicen-como-somos.jpg.webp" alt="imagen de ropa en oferta"></a></div>
+          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/plantilla-etiqueta-percheros-mucha-ropa-perchas-sobre-fondo-blanco_1308-61192.avif" alt="imagen de ropa en oferta"></a></div>
+          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/ropaHombres.jpg" alt="ropa para hombres"></a></div>
+          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/joyas.jpg" alt="joyas"></a></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+
+      <!--tarjetas de ofertas-->
+      <div id="tarjetasOfertas">
+
+      </div>
+    <footer>
+        <h2>Contacto</h2>
+            <p>Tel.: 012 345 6789</p>
+            <p>Email.: mailfalso@ecommerce.com</p>
+            <p>Dirección.: Calle Falsa 1234, Antananarivo, Madagascar</p>
+            <p>Web creada por Sofía Sención para el trabajo final del Curso de Javascript en Coderhouse. Setiembre, 2023.</p>
+       
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script><!--libreria swiper-->
+    <script src="./main.js"></script>
+</body>
+</html>

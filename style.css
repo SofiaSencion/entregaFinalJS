@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: #626262; */
+}
+
+#productos{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    padding: 10px;
+    justify-content: end;
+  }
+  
+
+nav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+#productos-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+ .tarjetas{
+    background-color: white;
+    border: 1px;
+    border-color: black;
+    width: 300px;
+    height: auto;
+    padding: 1rem;
+    margin: 1rem;
+    display: inline-block; 
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+} 
+
+.tarjetasImg{
+    width: 200px;
+  height: 300px;
+  object-fit: none;
+} 
+
+nav a:hover{
+    background-color: yellowgreen; /*cambiar color una vez finallizado el JS*/
+    color: black;
+    border-radius: 10px;
+}
+
+button{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.botonModo{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modoOscuro{
+    background-color: #636363;/*cambiar color una vez finalizado el JS*/
+    /* color: aliceblue; */
+}
+
+footer{
+    background-color: #333;
+    color: #f2f2f2;
+}
+
+/*************************************** swiper **************************************/
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 50%;
+  height: 50%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+form{
+    display: flex;
+   flex-direction: column;
+   padding: 1rem;
+}
+
+.elementoForm{
+    margin-bottom: 1rem;
+}
