@@ -1,22 +1,13 @@
-const api = "https://fakestoreapi.com/products"; //llamar api
+const api = "https://fakestoreapi.com/products";
 
-///////POROTO VER///////////
+////////poroto ver/////////////////
+
 
 var informacion = [];
-
-async function obtenerProductos() {
-    try {
-      const response = await fetch(api);
-      informacion = await response.json();
-      console.log(informacion);
-      let productos = generarTarjetas(informacion);
-      eventoClick(productos);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  }
+var productos = "";
 
 function generarTarjetas(productos) {
+  document.querySelector("#productos-container").innerHTML = "";
   const tarjetitas = productos.reduce((acumuladora, elemento) => {
     return (
       acumuladora +
@@ -30,36 +21,110 @@ function generarTarjetas(productos) {
         `
     );
   }, "");
-
   document.querySelector("#productos-container").innerHTML = tarjetitas;
-  //tal vez agregar descripcion a los productos, pero quedan desproporcionados los distintos tamanios de descripcion
 }
 
-////////////////////// event listener botones agregar al carrito => guardar en el local storage
+async function obtenerProductos() {
+  const response = await fetch(api);
+  const data = await response.json();
+  informacion = data;
+  productos = generarTarjetas(informacion);
+}
 
-let carrito = []; //array donde van a ir los productos selecionados
-
-var botonesCarrito = document.querySelectorAll(".botones");
-
-const eventoClick = (array) => {
+function eventoClick() {
   let nodos = document.querySelectorAll(".botones");
   console.log(nodos);
   for (let i = 0; i < nodos.length; i++) {
     nodos[i].onclick = (e) => {
       console.log(e.currentTarget.id);
-      console.log(informacion)
-      const buscarProducto = informacion.find((element) => element.id === Number(e.currentTarget.id));
+      console.log(informacion);
+      const buscarProducto = informacion.find(
+        (element) => element.id === Number(e.currentTarget.id)
+      );
       console.log(buscarProducto);
       carrito.push(buscarProducto);
       console.log(carrito);
       localStorage.setItem("productos", JSON.stringify(carrito));
     };
   }
-};
+}
+
+function ordenar(orden) {
+  if (orden == "AZ") {
+    informacion.sort(function (a, b) {
+      if (a.title > b.title) {
+        return 1;
+      }
+      if (a.title < b.title) {
+        return -1;
+      }
+      return 0;
+    });
+  } else if (orden == "ZA") {
+    informacion.sort(function (a, b) {
+      if (a.title < b.title) {
+        return 1;
+      }
+      if (a.title > b.title) {
+        return -1;
+      }
+      return 0;
+    }); 
+  } else if (orden == "precioAS"){
+    informacion.sort(function (a, b) {
+      if (a.price > b.price){
+        return 1;
+      }
+      if (a.price < b.price){
+        return -1;
+      } 
+      return 0;
+    })
+  } else if (orden == "precioDES") {
+    informacion.sort(function(a, b){
+      if (a.price < b.price){
+        return 1;
+      }
+      if ( a.price > b.price){
+        return -1;
+      }
+      return 0;
+    })
+  }
+
+
+
+  generarTarjetas(informacion);
+  eventoClick();
+}
+
+let carrito = []; //array donde van a ir los productos selecionados
+
+var botonesCarrito = document.querySelectorAll(".botones");
 
 obtenerProductos();
 
+const ordenarAZ = document.querySelector("#ordenarAZ");
+const ordenarZA = document.querySelector("#ordenarZA");
+const ordenarPrecioAS = document.querySelector("#ordenarPrecioAS");
+const ordenarPrecioDES = document.querySelector("#ordenarPrecioDES")
 
+
+ordenarAZ.addEventListener("click", () => {
+  ordenar("AZ");
+});
+
+ordenarZA.addEventListener("click", () => {
+  ordenar("ZA");
+});
+
+ordenarPrecioAS.addEventListener("click", () => {
+  ordenar("precioAS");
+});
+
+ordenarPrecioDES.addEventListener("click", () => {
+  ordenar("precioDES")
+})
 
 /////////MODO OSCURO//////////////////////
 
@@ -110,70 +175,3 @@ darkModeToggle.addEventListener("click", () => {
     console.log("desactivado");
   }
 });
-
-
-//////////////////ordenar productos alfabeticamente//////////////
-
-
-// llamar todo esto de nuevo, ordenarlo, y despues volver a generar tarjetas
-// envolver todo eso en un evento click de los botones
-
-//hacer eventlistener click de los botones
-
-const ordenarAZ = document.querySelector("#ordenarAZ")
-const ordenarZA = document.querySelector("#ordenarZA")
-
-
-///ordenar de A a Z
-ordenarAZ.addEventListener("click", () => {
-  console.log("click AZ")
-  var informacion = [];
-
- async function obtenerProductos() {
-     try {
-       const response = await fetch(api);
-       informacion = await response.json();
-
-//ordenar productos con sort
-          informacion.sort((a, b) => {
-            return a.title.localeCompare(b.title);
-          })
-       console.log(informacion);
-       let productos = generarTarjetas(informacion);
-       eventoClick(productos);
-     } catch (error) {
-       console.error('Error:', error);
-     }
-   }
-
- function generarTarjetas(productos) {
-   const tarjetitas = productos.reduce((acumuladora, elemento) => {
-     return (
-       acumuladora +
-       `
-         <div class="tarjetas" id="${elemento.id}">
-             <h3> ${elemento.title}</h3>
-             <img src="${elemento.image}" alt="${elemento.title}" class='tarjetasImg'>
-             <b> $${elemento.price}</b>
-             <button class="botones" id="${elemento.id}"> Agregar al carrito</button>
-         </div>
-         `
-     );
-   }, "");
-
-   document.querySelector("#productos-container").innerHTML = tarjetitas;
- }
-}
-
-)
-
-obtenerProductos();
-
-///ordenar de Z a A
-ordenarZA.addEventListener("click", () => {
-  console.log("click ZA")
-}
-
-)
-
- 
