@@ -50,3 +50,87 @@
       }
 
   }) 
+
+  ///////////llamar al carrito en el local storage y mostrarlo en la pagina//////////////////
+
+///////////clase 11 local storage/////////
+
+let productosCarrito = localStorage.getItem("productos")
+
+let carritoParseado = JSON.parse(productosCarrito)
+
+console.log (carritoParseado)
+
+
+function generarCarrito (carritoParseado){
+  document.querySelector("#carritoContainer").innerHTML = "";
+  const tarjetitas = carritoParseado.reduce((acumuladora, elemento) => {
+        return (
+          acumuladora +
+          `
+            <div class="tarjetas" id="${elemento.id}">
+                <h3> ${elemento.title}</h3>
+                <img src="${elemento.image}" alt="${elemento.title}" class='tarjetasImg'>
+                <b> $${elemento.price}</b>
+                <button class="botones" id="${elemento.id}"> Remover del carrito</button>
+            </div>
+            `
+        );
+      }, "");
+      document.querySelector("#carritoContainer").innerHTML = tarjetitas;
+    }
+
+generarCarrito(carritoParseado);
+
+//////////////////////////boton REMOVER del carrito
+
+function clickBorrar() {
+  let nodos = document.querySelectorAll(".botones"); //nodos = los botones carrito
+  console.log(nodos);
+  for (let i = 0; i < nodos.length; i++) { //recorrer los botones carrito
+    nodos[i].onclick = (e) => { //evento ONCLICK es el que escucha cuando el usuario hace click
+      console.log(e.currentTarget.id);
+      const idProducto = Number(e.currentTarget.id);
+
+      //traer los productos en el local
+      const productosLocal = JSON.parse(localStorage.getItem("productos"))
+
+      //encontrar el indice del producto a borrar de la lista
+      const productoIndex = productosLocal.findIndex((producto) => producto.id === idProducto);
+
+      if (productoIndex !== -1){
+        productosLocal.splice(productoIndex, 1);
+        localStorage.setItem("productos", JSON.stringify(productosLocal));
+
+        generarCarrito(productosLocal);
+      }
+    }
+  }
+}
+
+clickBorrar();
+
+// //////////////remover SIN actualizar
+
+// function clickBorrar (){
+//   let nodos = document.querySelectorAll(".botones");
+
+//   nodos.forEach((boton) => {
+//     boton.onclick = (e) => {
+//       const productoId = Number(e.currentTarget.id);
+
+//       //traer los productos actuales del local
+//       let productosLocal = JSON.parse(localStorage.getItem("productos") || []);
+      
+//       //filtrar para eliminar el elegido
+//       productosLocal = productosLocal.filter((producto) => producto.id !== productoId);
+      
+//       // actualizar storage
+//       localStorage.setItem("productos", JSON.stringify(productosLocal));
+
+//       //llamar generarCarrito
+//       generarCarrito(productosLocal);
+      
+//     }
+//   })
+// }

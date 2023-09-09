@@ -1,7 +1,7 @@
 const api = "https://fakestoreapi.com/products";
 
 ////////poroto ver/////////////////
-
+///////////////////////////////////los botones carrito funcionan bien hasta que vas al carrito y despues volves a productos a poner algo mas en el carrito, ahi se borra el carrito anterior del local y arranca uno nuevo
 
 var informacion = [];
 var productos = "";
@@ -29,16 +29,17 @@ async function obtenerProductos() {
   const data = await response.json();
   informacion = data;
   productos = generarTarjetas(informacion);
+  eventoClick();
 }
 
 function eventoClick() {
-  let nodos = document.querySelectorAll(".botones");
+  let nodos = document.querySelectorAll(".botones"); //nodos = los botones carrito
   console.log(nodos);
-  for (let i = 0; i < nodos.length; i++) {
-    nodos[i].onclick = (e) => {
+  for (let i = 0; i < nodos.length; i++) { //recorrer los botones carrito
+    nodos[i].onclick = (e) => { //evento ONCLICK es el que escucha cuando el usuario hace click
       console.log(e.currentTarget.id);
       console.log(informacion);
-      const buscarProducto = informacion.find(
+      const buscarProducto = informacion.find( 
         (element) => element.id === Number(e.currentTarget.id)
       );
       console.log(buscarProducto);
@@ -48,6 +49,8 @@ function eventoClick() {
     };
   }
 }
+
+
 
 function ordenar(orden) {
   if (orden == "AZ") {
@@ -92,15 +95,13 @@ function ordenar(orden) {
     })
   }
 
-
-
   generarTarjetas(informacion);
   eventoClick();
 }
 
 let carrito = []; //array donde van a ir los productos selecionados
 
-var botonesCarrito = document.querySelectorAll(".botones");
+var botonesCarrito = document.querySelectorAll(".botones");///////////////////////////////////////////////////////////////////////////////
 
 obtenerProductos();
 
