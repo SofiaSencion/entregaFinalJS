@@ -77,7 +77,8 @@ function generarCarrito (carritoParseado){
             `
         );
       }, "");
-      document.querySelector("#carritoContainer").innerHTML = tarjetitas;
+      document.querySelector("#carritoContainer").innerHTML = tarjetitas; 
+      clickBorrar();
     }
 
 generarCarrito(carritoParseado);
@@ -103,6 +104,7 @@ function clickBorrar() {
         localStorage.setItem("productos", JSON.stringify(productosLocal));
 
         generarCarrito(productosLocal);
+      
       }
     }
   }

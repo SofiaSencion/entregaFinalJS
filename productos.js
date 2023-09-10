@@ -45,7 +45,13 @@ function eventoClick() {
       console.log(buscarProducto);
       carrito.push(buscarProducto);
       console.log(carrito);
-      localStorage.setItem("productos", JSON.stringify(carrito));
+      if (localStorage.getItem("productos") === null) {
+        localStorage.setItem("productos", JSON.stringify(carrito));
+      } else if (localStorage.getItem("productos").length > 0) {
+        let productosTemp = JSON.parse(localStorage.getItem("productos"));
+        productosTemp.push(buscarProducto);
+        localStorage.setItem("productos", JSON.stringify(productosTemp));
+      }
     };
   }
 }
