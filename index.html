@@ -8,37 +8,41 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body class="modoClaro">
+
     <nav>
-        <a class="active" href="./index.html">Home</a>
-        <a href="./productos.html">Productos</a>
-        <a href="./carrito.html">Carrito</a>        
-        <a href="./contacto.html">Contacto</a>
-        <button id="dark-mode-toggle" class="dark-mode-toggle">Modo oscuro</button>
+        <a href="./index.html" id="logoLink"><img src="./sakuraLogo.png" alt="Logo tienda Poem"  id="logo"></a>
+
+        <div id="botones">
+            <button id="dark-mode-toggle" class="dark-mode-toggle" itemid="botonOscuro">Modo oscuro</button>
+            <div id="enlaces">
+                <a class="active" href="./index.html" id="botonHome">Home</a>
+                <a href="./productos.html" id="botonProductos">Productos</a>
+                <a href="./carrito.html" id="botonCarrito">Carrito</a>        
+                <a href="./contacto.html" id="botonContacto">Contacto</a>
+            </div>
+            
+        </div>
     </nav>
     
-    <h1>HOME</h1>
+    <main>
+        <h1>Home</h1>
 
-    <!--swiper-->
+        <!--swiper-->
 
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/273575-black-friday-2017-zara-ofertas-rebajas-ropa.webp" alt="imagen de ropa en oferta"></a></div>
-          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/2e8b6d3f-0f10-42c7-8a38-b0af7e3e3ec2.png" alt="imagen de ropa en oferta"></a></div>
-          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/Los-colores-que-utilizamos-en-la-ropa-dicen-como-somos.jpg.webp" alt="imagen de ropa en oferta"></a></div>
-          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/plantilla-etiqueta-percheros-mucha-ropa-perchas-sobre-fondo-blanco_1308-61192.avif" alt="imagen de ropa en oferta"></a></div>
-          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/ropaHombres.jpg" alt="ropa para hombres"></a></div>
-          <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/joyas.jpg" alt="joyas"></a></div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/maxresdefault.jpg" alt="imagen portada de campaña"></a></div>
+            <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/poemVestidosRosados.png" alt="imagen de vestidos rosados"></a></div>
+            <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/BZE_8649.webp" alt="imagen de mujeres en un pasillo"></a></div>
+            <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/BZE_8645.webp" alt="imagen de mujeres en un pasillo"></a></div>
+            <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/poemHombres.jpg" alt="imagen de trajes para hombres"></a></div>
+            <div class="swiper-slide"><a href="./productos.html"><img src="./imagenesSwiper/joyas.jpg" alt="joyas"></a></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-
-      <!--tarjetas de ofertas-->
-      <div id="tarjetasOfertas">
-
-      </div>
+    </main>
     <footer>
         <h2>Contacto</h2>
             <p>Tel.: 012 345 6789</p>

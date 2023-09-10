@@ -7,27 +7,39 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body class="modoClaro">
+   
     <nav>
-        <a class="active" href="./index.html">Home</a>
-        <a href="./productos.html">Productos</a>
-        <a href="./carrito.html">Carrito</a>        
-        <a href="./contacto.html">Contacto</a>
-        <button id="dark-mode-toggle" class="dark-mode-toggle">Modo oscuro</button>
+        <a href="./index.html" id="logoLink"><img src="./sakuraLogo.png" alt="Logo tienda Poem"  id="logo"></a>
+
+        <div id="botones">
+            <button id="dark-mode-toggle" class="dark-mode-toggle" itemid="botonOscuro">Modo oscuro</button>
+            <div id="enlaces">
+                <a class="active" href="./index.html" id="botonHome">Home</a>
+                <a href="./productos.html" id="botonProductos">Productos</a>
+                <a href="./carrito.html" id="botonCarrito">Carrito</a>        
+                <a href="./contacto.html" id="botonContacto">Contacto</a>
+            </div>
+            
+        </div>
     </nav>
     
-    <h1>CARRITO</h1>
+    <main>
 
-    <div id="carritoContainer">
-        
-    </div>
+        <h1>Carrito</h1>
 
-     <!-- <div class="productosCarrito" id="${elemento.id}">
-        <h3> ${elemento.title}</h3>
-        <img src="${elemento.image}" alt="${elemento.title}">
-        <p>${elemento.description}</p>
-        <b>${elemento.price}</b>
-        <button class="botones" id="${elemento.id}">Agregar al carrito</button>
-     </div> -->
+        <div id="carritoContainer">
+            
+        </div>
+
+        <!-- <div class="productosCarrito" id="${elemento.id}">
+            <h3> ${elemento.title}</h3>
+            <img src="${elemento.image}" alt="${elemento.title}">
+            <p>${elemento.description}</p>
+            <b>${elemento.price}</b>
+            <button class="botones" id="${elemento.id}">Agregar al carrito</button>
+        </div> -->
+
+    </main>
 
     <footer>
         <h2>Contacto</h2>

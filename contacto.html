@@ -7,39 +7,46 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body class="modoClaro">
+    
    <nav>
-        <a class="active" href="./index.html">Home</a>
-        <a href="./productos.html">Productos</a>
-        <a href="./carrito.html">Carrito</a>        
-        <a href="./contacto.html">Contacto</a>
-        <button id="dark-mode-toggle" class="dark-mode-toggle">Modo oscuro</button>
+        <a href="./index.html" id="logoLink"><img src="./sakuraLogo.png" alt="Logo tienda Poem"  id="logo"></a>
+
+        <div id="botones">
+            <button id="dark-mode-toggle" class="dark-mode-toggle" itemid="botonOscuro">Modo oscuro</button>
+            <div id="enlaces">
+                <a class="active" href="./index.html" id="botonHome">Home</a>
+                <a href="./productos.html" id="botonProductos">Productos</a>
+                <a href="./carrito.html" id="botonCarrito">Carrito</a>        
+                <a href="./contacto.html" id="botonContacto">Contacto</a>
+            </div>
+            
+        </div>
     </nav>
 
- <h1>CONTACTO</h1>
+    <main>
+        <h1>Contacto</h1>
 
- <!--formulario contacto-->
-    <form action="">
+        <!--formulario contacto-->
+            <form action="">
 
-        <label for="inputNombre">
-            <input type="text" placeholder="Su nombre" id="inputNombre"  class="elementoForm">
-        </label>
+                <label for="inputNombre">
+                    <input type="text" placeholder="Su nombre" id="inputNombre"  class="elementoForm">
+                </label>
 
-        <label for="correo">
-            <input type="email" placeholder="Su Email" id="correo" class="elementoForm">
-        </label>
+                <label for="correo">
+                    <input type="email" placeholder="Su Email" id="correo" class="elementoForm">
+                </label>
 
-        <label for="mensaje">
-            <input type="text" placeholder="Su mensaje" id="mensaje" class="elementoForm">
-        </label>
+                <label for="mensaje">
+                    <textarea name="mensaje" id="mensaje" cols="75" rows="20" placeholder="Su mensaje"></textarea>
+                </label>
 
-        <!-- capaz cambiar el input de mansaje por un textarea <label for="textarea"></label> -->
+                <label>
+                    <input type="submit" placeholder="Enviar">
+                </label>
 
-        <label>
-            <input type="submit" placeholder="Enviar">
-        </label>
-
-    </form>
-
+            </form>
+    </main>
     <footer>
         <h2>Contacto</h2>
             <p>Tel.: 012 345 6789</p>
