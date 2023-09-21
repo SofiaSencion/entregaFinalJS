@@ -1,10 +1,8 @@
 const api = "https://fakestoreapi.com/products";
 
-////////poroto ver/////////////////
-///////////////////////////////////los botones carrito funcionan bien hasta que vas al carrito y despues volves a productos a poner algo mas en el carrito, ahi se borra el carrito anterior del local y arranca uno nuevo
 
-var informacion = [];
-var productos = "";
+let informacion = [];
+let productos = "";
 
 function generarTarjetas(productos) {
   document.querySelector("#productos-container").innerHTML = "";
@@ -107,7 +105,7 @@ function ordenar(orden) {
 
 let carrito = []; //array donde van a ir los productos selecionados
 
-var botonesCarrito = document.querySelectorAll(".botones");///////////////////////////////////////////////////////////////////////////////
+let botonesCarrito = document.querySelectorAll(".botones");
 
 obtenerProductos();
 
@@ -133,7 +131,7 @@ ordenarPrecioDES.addEventListener("click", () => {
   ordenar("precioDES")
 })
 
-/////////MODO OSCURO//////////////////////
+//MODO OSCURO/
 
 //chequear si "modoOscuro" esta guardado en el local Storage
 let darkMode = localStorage.getItem("modoOscuro"); // crea la var darkMode dentro de local storage // no se que hace getItem modOscuro

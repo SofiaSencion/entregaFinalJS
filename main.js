@@ -1,15 +1,8 @@
-//copiar js boton modo oscuro cuando este terminado//
-
-  /////////MODO OSCURO//////////////////////
 
   //chequear si "modoOscuro" esta guardado en el local Storage
   let darkMode = localStorage.getItem("modoOscuro"); // crea la var darkMode dentro de local storage // no se que hace getItem modOscuro
 
   const darkModeToggle = document.querySelector("#dark-mode-toggle"); //crea la var darkModeToggle y guarda lo que este en el ID "#dark-mode-toggle"
-
-  //chequear si el modo oscuro esta activado
-  //si esta activado, desactivarlo
-  //si esta desactivado, activarlo
 
   const activarModoOscuro = () => {
     //agregar clase modoOscuro al body
@@ -53,7 +46,7 @@
 
   }) 
 
-var swiper = new Swiper(".mySwiper", { //iniciar swiper
+let swiper = new Swiper(".mySwiper", { //iniciar swiper
   pagination: {
     el: ".swiper-pagination",
     type: "fraction",

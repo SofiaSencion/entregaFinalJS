@@ -1,4 +1,4 @@
-  /////////MODO OSCURO//////////////////////
+//MODO OSCURO
 
   //chequear si "modoOscuro" esta guardado en el local Storage
   let darkMode = localStorage.getItem("modoOscuro"); // crea la var darkMode dentro de local storage // no se que hace getItem modOscuro
@@ -51,9 +51,7 @@
 
   }) 
 
-  ///////////llamar al carrito en el local storage y mostrarlo en la pagina//////////////////
-
-///////////clase 11 local storage/////////
+//llamar al carrito en el local storage y mostrarlo en la pagina
 
 let productosCarrito = localStorage.getItem("productos")
 
@@ -83,7 +81,7 @@ function generarCarrito (carritoParseado){
 
 generarCarrito(carritoParseado);
 
-//////////////////////////boton REMOVER del carrito
+
 
 function clickBorrar() {
   let nodos = document.querySelectorAll(".botones"); //nodos = los botones carrito
@@ -111,28 +109,3 @@ function clickBorrar() {
 }
 
 clickBorrar();
-
-// //////////////remover SIN actualizar
-
-// function clickBorrar (){
-//   let nodos = document.querySelectorAll(".botones");
-
-//   nodos.forEach((boton) => {
-//     boton.onclick = (e) => {
-//       const productoId = Number(e.currentTarget.id);
-
-//       //traer los productos actuales del local
-//       let productosLocal = JSON.parse(localStorage.getItem("productos") || []);
-      
-//       //filtrar para eliminar el elegido
-//       productosLocal = productosLocal.filter((producto) => producto.id !== productoId);
-      
-//       // actualizar storage
-//       localStorage.setItem("productos", JSON.stringify(productosLocal));
-
-//       //llamar generarCarrito
-//       generarCarrito(productosLocal);
-      
-//     }
-//   })
-// }

@@ -1,17 +1,3 @@
-//copiar js boton modo oscuro cuando este terminado//
-
-// formulario que permita contactarse con la empresa
-
-//agregar preventdefault clase 11
-
-// el formulario tiene que validar los datos que se ingresen
-
-// el campo que reciba el mail tiene que validar que el string ingresado contenga un @ 
-
-// el campo de nombre debe tener mas de 2 caracteres
-
-// el campo de mensaje debe tener mas de 2 caracteres
-
 //crear array vacio para guardar los mensajes
 let mensajes = []
 
@@ -69,16 +55,13 @@ localStorage.setItem("mensajes", JSON.stringify(mensajes))
 })
 
 
-  /////////MODO OSCURO//////////////////////
+//MODO OSCURO//
 
   //chequear si "modoOscuro" esta guardado en el local Storage
   let darkMode = localStorage.getItem("modoOscuro"); // crea la var darkMode dentro de local storage // no se que hace getItem modOscuro
 
   const darkModeToggle = document.querySelector("#dark-mode-toggle"); //crea la var darkModeToggle y guarda lo que este en el ID "#dark-mode-toggle"
 
-  //chequear si el modo oscuro esta activado
-  //si esta activado, desactivarlo
-  //si esta desactivado, activarlo
 
   const activarModoOscuro = () => {
     //agregar clase modoOscuro al body
@@ -105,7 +88,7 @@ localStorage.setItem("mensajes", JSON.stringify(mensajes))
 
   //event listener del boton
   darkModeToggle.addEventListener("click", () => {
-    console.log("clickOscuro"); //chequear que funcione el eventlistener
+    console.log("clickOscuro"); 
 
     //get preferencia modo oscuro
     darkMode = localStorage.getItem("modoOscuro");
